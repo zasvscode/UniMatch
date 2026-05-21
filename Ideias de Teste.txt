@@ -1,0 +1,46 @@
+1. Testes Funcionais
+Autenticação e Perfil (Login Universitário):
+
+Validação de email institucional: Testar se o sistema apenas permite o registo com emails académicos válidos (ex: 20........@ipiaget.pt). Emails comuns (Gmail, Outlook) devem ser rejeitados.
+
+Fluxo de primeiro acesso (Caloiros/Erasmus): Garantir que, ao criar conta, o utilizador é obrigado a preencher os dados críticos (Curso, Ano letivo, Disciplinas/Interesses) antes de aceder ao ecrã de matching.
+
+Upload de fotografia: Testar formatos de imagem suportados (JPG, PNG) e limites de tamanho. Garantir que imagens corrompidas ou ficheiros maliciosos (.exe mascarados) são bloqueados.
+
+Verificar a diversidade dos filtros,interesses,idades …
+
+Matching Inteligente:
+
+Algoritmo de compatibilidade: Validar se as sugestões de utilizadores fazem sentido. Por exemplo: um estudante de Engenharia Informática com interesse em "Inteligência Artificial" deve ver primeiro colegas do mesmo curso ou com interesses idênticos como os CTESPS de Cibersegurança e PWDAM e não perfis completamente desalinhados.
+
+Geração de Match: Validar que o chat só é desbloqueado quando ambos os utilizadores dão "Like" (sistema idêntico ao Tinder/Bumble).
+
+Cenário de isolamento: Testar o que acontece quando não existem utilizadores compatíveis disponíveis na base de dados (o sistema deve mostrar uma mensagem amigável e sugerir expandir os interesses e mostrar os restantes alunos)
+
+Comunicação e Grupos:
+
+Mensagens em tempo real: Validar o envio e receção imediata de mensagens de texto entre utilizadores com o match.
+
+Criação de Grupos de Estudo: Testar se um utilizador consegue criar um grupo associado a uma cadeira específica (ex: "Base de dados") e se outros alunos dessa cadeira conseguem encontrar o grupo na pesquisa.
+
+Sistema de Reputação Académica:
+
+Avaliação de colegas: Garantir que um utilizador só consegue avaliar um colega após terem feito um trabalho conjunto ou partilharem um grupo de estudo (evitar avaliações falsas).
+
+2. Testes Não Funcionais
+
+Segurança e Proteção de Dados:
+
+Bloqueio de acessos externos: Garantir que nenhuma API interna ou ecrã da aplicação é acessível sem um token de autenticação ativo.
+
+Privacidade de dados: Validar se dados sensíveis (como o email institucional, número de telemóvel) não ficam expostos publicamente no perfil de outros utilizadores.
+
+Desempenho e Escalabilidade:
+
+Tempo de resposta (Limite de 2s): Testar o carregamento do feed de matching e o envio de mensagens sob condições normais de rede. O tempo de resposta da API não deve ultrapassar os 2 segundos.
+
+Carga de pico (Início de Semestre): Simular múltiplos acessos em simultâneo (ex: multiplos estudantes a tentar encontrar grupos na primeira semana de aulas) para garantir que o servidor não vai abaixo.
+
+Responsividade e Mobile:
+
+Design Fluido: Testar a interface em diferentes tamanhos de ecrã (iOS e Android), garantindo que os botões de Like/Dislike e os menus de navegação não se sobrepõem e permanecem fáceis de clicar com o polegar.
